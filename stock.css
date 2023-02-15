@@ -20,25 +20,25 @@ h1{
     border-radius: 10px;
    
 }
-.search {
+/* .search {
     margin: 12px;
     width: 350px;
     height: 50px;
     border-radius: 5px;
     background-color: gray;
-}
+} */
 /* .searchbar{
     /* height: 300px;
     /* width: 300px; */
     /* border: 2px solid green; */ */
 
 /* } */ */
-/* .search{
+.search{
     margin: 15px;
     padding: 20px;
     background-color: grey;
     border-radius: 10px;
-} */
+}
 
 .btn{
     
@@ -52,6 +52,8 @@ h1{
     justify-content: center;
     align-items: center;
     gap:30px
+    /* grid-template-columns: auto auto auto auto; */
+  
 }
 .INTRADAY {
     margin: 25px;
@@ -95,7 +97,7 @@ h1{
     align-items: center;
 
 } */
-.searchlist{
+/* .searchlist{
     background-color: gray;
     text-align: center;
     background-color: gray;
@@ -104,7 +106,7 @@ h1{
     padding: 20px;
     border-radius: 10px;
     border: 2px solid green;
-}
+} */
 button{
     border: 3px solid gray;
     border-radius: 2px;
@@ -112,15 +114,62 @@ button{
 /* button:active{
     background-color: red;
 } */
-.btn{
+#btn{
 /* height: 400px;
 width: 400px; */
-background-color: red;
+display: grid;
+/* background-color: red; */
+grid-template-columns: 2fr 2fr;
+
+
 }
+
 /* .check{
     background-color: gold;
     color: red;
 } */
 .fa-solid fa-arrow-up{
 
+}
+#search{
+    display:flex;
+    text-align: center;
+    justify-content: center;
+   
+   width: 600px;
+   padding: 20px;
+   background-color: gray;
+   border-radius: 6px sold red;
+
+}
+.big{
+    display: block;
+    justify-content: center;
+    text-align: center;
+}
+.searchlist{
+    /* display: block; */
+    justify-content: center;
+    align-items: center;
+  
+    text-align: center;
+   
+    width: 900px;
+    margin: 25px;
+    padding: 20px;
+   
+    border-radius: 10px;
+    border: 2px solid grey;
+    width: 500px;
+}
+.change{
+
+    display: flex;
+    margin: 11px;
+    padding: 12px;
+}
+#icon{
+   
+    margin: 30px;
+    font-size: 30px
 }

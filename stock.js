@@ -1,21 +1,11 @@
-// let result =fetch("https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=S1JDX8XYIQ5XTODX")
-// .then(response => response.json())
-// .then(json => 
-//   console.log(json),
-//   document.getElementById('symbol-list').append ('<h4>'+json['Meta Data']['2. Symbol']),
-//   );
 
-  // const userAction = async () => {
-  //   const response = await fetch('https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=S1JDX8XYIQ5XTODX');
-  //   const myJson = await response.json(); //extract JSON from the http response
-  //   console.log(myJson);
-  // }
 
 var mycall = 1;
 
 // Defining async function
 async function getapi( timeFrame, symBol ) {
-
+// https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=tencent&apikey=demo
+// MSFT, IBM, ORCL, INFY
   const url = 'https://www.alphavantage.co/query?function=TIME_SERIES_'+timeFrame+'&symbol='+symBol+'&interval=5min&apikey=S1JDX8XYIQ5XTODX';
 
   const response = await fetch(url);
@@ -32,10 +22,10 @@ async function getapi( timeFrame, symBol ) {
   console.log( data);
   var myData= data[dataKey];
   for(key in myData) {
-    if (myData.hasOwnProperty(key)) {
+    // // if (myData.hasOwnProperty(key)) {
       latestPrice = myData[key]['4. close'];
       break;
-    }
+    // }
   }
 
   let myHtml = `<div onclick='myToggle(`+mycall+`)' id=`+mycall+`><h4>`+data['Meta Data']['2. Symbol']+`<span> `+latestPrice+`</span><button>`+timeFrame+`
@@ -70,7 +60,7 @@ async function getapi( timeFrame, symBol ) {
           </table></div>`
 
   $('#symbol-list').append(myHtml+myList);
-  console.log(myList);
+
   mycall++;
 
 }
@@ -91,11 +81,27 @@ function Click(evt, time) {
     timeFrame = $('#time_series').val();
     symBol = $('#search').val();
     getapi(timeFrame,symBol); 
+   
   }
 
   function remove( id ){
     $('#'+id).remove();
   }
+  
   function myToggle(id){
     $('#list'+id).toggle();
   }
+
+  
+
+//   function deleteAll(){
+
+//   var deleteList= document.getElementById("symbol-list").val;
+//   while(a.length > 0) {
+//     a.pop();
+// }
+//   }
+
+function clearcontent(elementID) {
+  document.getElementById(elementID).innerHTML = "";
+}

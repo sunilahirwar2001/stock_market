@@ -17,12 +17,13 @@
     <div class="container">
       
      <div class="wrapper">
-        <h1><i class="fa-solid fa-arrow-up"></i>Stock Market Dashboard   <i class="fa-solid fa-arrow-down"></i></h1>
+        <h1 class="big"><i class="fa-solid fa-arrow-up"></i>Stock Market Dashboard   <i class="fa-solid fa-arrow-down"></i></h1>
     
      <div class="searchbar">
-        <input type="text" class="search"id="search"placeholder="Search for symbool" min="0"max='9'>
-        <span><i    id='change'class="fa-sharp fa-solid fa-magnifying-glass"></i></span>
-  
+      <div class="change">
+        <input type="text" class="search"id="search"placeholder="Search for symbool" min="0"max='9'  ><i  id='icon' class="fa-sharp fa-solid fa-magnifying-glass"></i>
+        <!-- <span><i    id='change'class="fa-sharp fa-solid fa-magnifying-glass"></i></span>
+   --></div>
   <div id="btn">
     <!-- <div class="btn">
   -->
@@ -30,28 +31,27 @@
         <button class="DAILY"  id="DAILY" onclick="Click(event, 'DAILY')">DAILY</button>
       <!-- </div> -->
  
-    <span id="check">
+    <!-- <span id="check"> -->
     
          <button  class="WEEKLY"id="WEEKLY" onclick="Click(event, 'WEEKLY')">WEEKLY</button> 
         <button class="MONTHLY"id="MONTHLY" onclick="Click(event, 'MONTHLY')">MONTHLY</button>
       </div>
-    </span>
+   
     <input type="hidden" name="time_series" id="time_series">
         
       <span>
         <!-- onclick="myFunction()" -->
         
         <button  class="searchlist" onclick="search()" id="searchlist">Your Watchlist </span></button>
+        <button  onclick = "clearcontent('symbol-list')">Delete all</button>
+
         <div id="symbol-list">
-        <!-- <div>
-          <h4> AMZN     <span>123.45</span> <button>INTRADAY</button> <i class="fa-sharp fa-solid fa-circle-xmark"></i></h4>
-        </div>
-        <div>
-          <h4> MS <span>123.45</span> <button>DAILY</button> <i class="fa-sharp fa-solid fa-circle-xmark"></i></h4>
-        </div> -->
+      </div>
+    
+
       </div>
       </div>
-      </div>
+   
       </body>
       <script src="./stock.js"></script>
 
